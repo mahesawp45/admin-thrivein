@@ -3,7 +3,7 @@ import PrimaryButton from '@/components/button/PrimaryButton';
 import InputText from '@/components/input/InputText';
 import React from 'react';
 
-const AddCategoryService = () => {
+const DetailCategoryService = () => {
   return (
     <div>
       <div className="flex w-1/2 flex-col items-center justify-center rounded-lg bg-white shadow-sm">
@@ -20,4 +20,4 @@ const AddCategoryService = () => {
   );
 };
 
-export default AddCategoryService;
+export default DetailCategoryService;

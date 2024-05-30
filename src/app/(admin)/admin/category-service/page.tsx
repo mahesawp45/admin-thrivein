@@ -48,6 +48,7 @@ const CategoryService = () => {
         {/* <p className="w-full text-center">No Data</p> */}
         {categories.map((category) => (
           <div
+            onClick={() => {}}
             key={category.id}
             className={`cursor-pointer rounded-md bg-[#242DA8] px-10 py-4 shadow-lg`}
           >
