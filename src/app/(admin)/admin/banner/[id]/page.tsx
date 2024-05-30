@@ -10,10 +10,11 @@ const DetailCategoryService = () => {
   return (
     <div>
       <div className="flex w-1/2 flex-col items-center justify-center rounded-lg bg-white shadow-sm">
-        <p className="mb-10 text-xl font-bold">Category Service {params.id}</p>
-        <InputText value="" label="ID" classStyle="mb-4" />
+        <p className="mb-10 text-xl font-bold">Add Service {params.id}</p>
+        <InputText value="" label="Service ID" classStyle="mb-4" />
         <InputText value="" label="Category" classStyle="mb-4" />
         <InputText value="" label="Title" classStyle="mb-4" />
+        <InputText value="" label="Price" classStyle="mb-4" />
         <InputText value="" label="Color" classStyle="mb-4" />
         <InputText value="" label="Description" classStyle="mb-4" />
         <InputText value="" label="Icon Url" classStyle="mb-4" />
