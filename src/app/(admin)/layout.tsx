@@ -15,35 +15,64 @@ import {
 import {
   Bars3Icon,
   BellIcon,
-  CalendarIcon,
-  ChartPieIcon,
+  ChatBubbleLeftIcon,
   Cog6ToothIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
+  TagIcon,
+  TicketIcon,
   HomeIcon,
   UsersIcon,
+  WrenchScrewdriverIcon,
+  PhotoIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import {
   ChevronDownIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/20/solid';
+import { usePathname } from 'next/navigation';
 
 const inter = Inter({ subsets: ['latin'] });
 
 const navigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-  { name: 'Team', href: '#', icon: UsersIcon, current: false },
-  { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-  { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
+  { name: 'Dashboard', href: '/admin', icon: HomeIcon, current: true },
+  {
+    name: 'Category Service',
+    href: '/admin/category-service',
+    icon: TagIcon,
+    current: false,
+  },
+  {
+    name: 'Service',
+    href: '/admin/service',
+    icon: WrenchScrewdriverIcon,
+    current: false,
+  },
+  {
+    name: 'Portfolio',
+    href: '/admin/portfolio-service',
+    icon: PhotoIcon,
+    current: false,
+  },
+  {
+    name: 'Banner',
+    href: '/admin/banner',
+    icon: TicketIcon,
+    current: false,
+  },
+  {
+    name: 'User',
+    href: '/admin/user',
+    icon: UsersIcon,
+    current: false,
+  },
+  {
+    name: 'Chat User',
+    href: '/admin/chat-user',
+    icon: ChatBubbleLeftIcon,
+    current: false,
+  },
 ];
-const teams = [
-  { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
-  { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
-  { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
-];
+
 const userNavigation = [
   { name: 'Your profile', href: '#' },
   { name: 'Sign out', href: '#' },
@@ -59,6 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <html lang="en">
@@ -154,40 +184,6 @@ export default function RootLayout({
                               ))}
                             </ul>
                           </li>
-                          <li>
-                            <div className="text-xs font-semibold leading-6 text-gray-400">
-                              Your teams
-                            </div>
-                            <ul role="list" className="-mx-2 mt-2 space-y-1">
-                              {teams.map((team) => (
-                                <li key={team.name}>
-                                  <a
-                                    href={team.href}
-                                    className={classNames(
-                                      team.current
-                                        ? 'bg-gray-50 text-indigo-600'
-                                        : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600',
-                                      'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
-                                    )}
-                                  >
-                                    <span
-                                      className={classNames(
-                                        team.current
-                                          ? 'border-indigo-600 text-indigo-600'
-                                          : 'border-gray-200 text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600',
-                                        'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium',
-                                      )}
-                                    >
-                                      {team.initial}
-                                    </span>
-                                    <span className="truncate">
-                                      {team.name}
-                                    </span>
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </li>
                           <li className="mt-auto">
                             <a
                               href="#"
@@ -229,7 +225,7 @@ export default function RootLayout({
                           <a
                             href={item.href}
                             className={classNames(
-                              item.current
+                              item.href === pathname
                                 ? 'bg-gray-50 text-indigo-600'
                                 : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600',
                               'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
@@ -237,7 +233,7 @@ export default function RootLayout({
                           >
                             <item.icon
                               className={classNames(
-                                item.current
+                                item.href === pathname
                                   ? 'text-indigo-600'
                                   : 'text-gray-400 group-hover:text-indigo-600',
                                 'h-6 w-6 shrink-0',
@@ -250,38 +246,7 @@ export default function RootLayout({
                       ))}
                     </ul>
                   </li>
-                  <li>
-                    <div className="text-xs font-semibold leading-6 text-gray-400">
-                      Your teams
-                    </div>
-                    <ul role="list" className="-mx-2 mt-2 space-y-1">
-                      {teams.map((team) => (
-                        <li key={team.name}>
-                          <a
-                            href={team.href}
-                            className={classNames(
-                              team.current
-                                ? 'bg-gray-50 text-indigo-600'
-                                : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600',
-                              'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
-                            )}
-                          >
-                            <span
-                              className={classNames(
-                                team.current
-                                  ? 'border-indigo-600 text-indigo-600'
-                                  : 'border-gray-200 text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600',
-                                'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium',
-                              )}
-                            >
-                              {team.initial}
-                            </span>
-                            <span className="truncate">{team.name}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
+
                   <li className="mt-auto">
                     <a
                       href="#"
