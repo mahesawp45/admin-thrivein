@@ -1,3 +1,4 @@
 import axios from 'axios';
 
-export const api = axios.create({ baseURL: '' });
+export const api = axios.create({ baseURL: process.env.BASE_URL });
+api.defaults.timeout = 10000;

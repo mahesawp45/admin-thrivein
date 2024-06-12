@@ -78,7 +78,7 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ];
 
-function classNames(...classes) {
+function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ');
 }
 
@@ -163,7 +163,7 @@ export default function RootLayout({
                                   <a
                                     href={item.href}
                                     className={classNames(
-                                      item.href.includes(pathname)
+                                      item.href.endsWith(pathname)
                                         ? 'bg-gray-50 text-indigo-600'
                                         : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600',
                                       'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
@@ -171,7 +171,7 @@ export default function RootLayout({
                                   >
                                     <item.icon
                                       className={classNames(
-                                        item.href.includes(pathname)
+                                        item.href.endsWith(pathname)
                                           ? 'text-indigo-600'
                                           : 'text-gray-400 group-hover:text-indigo-600',
                                         'h-6 w-6 shrink-0',
@@ -225,7 +225,7 @@ export default function RootLayout({
                           <a
                             href={item.href}
                             className={classNames(
-                              item.href.includes(pathname)
+                              item.href.endsWith(pathname)
                                 ? 'bg-gray-50 text-indigo-600'
                                 : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600',
                               'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
@@ -233,7 +233,7 @@ export default function RootLayout({
                           >
                             <item.icon
                               className={classNames(
-                                item.href.includes(pathname)
+                                item.href.endsWith(pathname)
                                   ? 'text-indigo-600'
                                   : 'text-gray-400 group-hover:text-indigo-600',
                                 'h-6 w-6 shrink-0',
