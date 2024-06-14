@@ -1,5 +1,5 @@
 import BannerRequest from '@/services/models/request/banner_request';
-import Banner from '@/services/models/response/banner';
+import { Banner, BannerResponse } from '@/services/models/response/banner';
 import BannerRepository from '@/services/repositories/banner/banner_repository';
 import { AxiosError } from 'axios';
 import { useQuery } from 'react-query';
@@ -22,7 +22,7 @@ export const createBanner = async (request: BannerRequest): Promise<Banner> => {
   return response;
 };
 
-export const getBanners = async (): Promise<Banner[]> => {
+export const getBanners = async (): Promise<BannerResponse> => {
   const response = await banner_repository
     .getBanners()
     .then(async (value) => {

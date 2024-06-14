@@ -1,4 +1,8 @@
-type Category = {
+export type CategoryResponse = {
+  services: Category[];
+};
+
+export type Category = {
   id: number;
   title: string;
   description: string;

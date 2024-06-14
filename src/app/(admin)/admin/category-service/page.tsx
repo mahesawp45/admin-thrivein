@@ -19,7 +19,7 @@ const CategoryService = () => {
         label="Add"
       />
       <div className="my-10 flex w-full space-x-6 pt-10">
-        {data?.map((category) => (
+        {data?.services?.map((category) => (
           <div
             onClick={() => {
               router.push(`${Routes.categories}/${category.id}`);

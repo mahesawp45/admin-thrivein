@@ -1,4 +1,8 @@
 import { api } from '@/services/config/api';
+import {
+  Category,
+  CategoryResponse,
+} from '@/services/models/response/category';
 
 class ServiceRepository {
   create_endpoint = 'create-category';
@@ -17,7 +21,7 @@ class ServiceRepository {
     }
   }
 
-  async getCategories(): Promise<Category[]> {
+  async getCategories(): Promise<CategoryResponse> {
     try {
       const response = await api.get(this.get_endpoint);
 

@@ -1,4 +1,8 @@
-type Banner = {
+export type BannerResponse = {
+  banners: Banner[];
+};
+
+export type Banner = {
   id: number;
   title: string;
   bannerUrl: string;
@@ -6,5 +10,3 @@ type Banner = {
   createdAt: string;
   updatedAt: string;
 };
-
-export default Banner;

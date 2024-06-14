@@ -1,36 +1,36 @@
 import { api } from '@/services/config/api';
-import BannerRequest from '@/services/models/request/banner_request';
-import { Banner, BannerResponse } from '@/services/models/response/banner';
+import ArticleRequest from '@/services/models/request/article_request';
+import { Article, ArticleResponse } from '@/services/models/response/article';
 
-class BannerRepository {
-  create_endpoint = 'create-banner';
-  get_endpoint = 'banners';
+class ArticleRepository {
+  create_endpoint = 'create-article';
+  get_endpoint = 'articles';
 
-  async createBanner(request: BannerRequest): Promise<Banner> {
+  async createArticle(request: ArticleRequest): Promise<Article> {
     try {
       const response = await api.post(this.create_endpoint, request);
 
       return response.data;
     } catch (error) {
       console.log('====================================');
-      console.log('ERROR CREATE BANNER ---> ', error);
+      console.log('ERROR CREATE ARTICLE ---> ', error);
       console.log('====================================');
       throw error;
     }
   }
 
-  async getBanners(): Promise<BannerResponse> {
+  async getArticles(): Promise<ArticleResponse> {
     try {
       const response = await api.get(this.get_endpoint);
 
       return response.data;
     } catch (error) {
       console.log('====================================');
-      console.log('ERROR GET ALL BANNER ---> ', error);
+      console.log('ERROR GET ALL ARTICLE ---> ', error);
       console.log('====================================');
       throw error;
     }
   }
 }
 
-export default BannerRepository;
+export default ArticleRepository;

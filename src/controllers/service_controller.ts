@@ -1,3 +1,7 @@
+import {
+  Category,
+  CategoryResponse,
+} from '@/services/models/response/category';
 import ServiceRepository from '@/services/repositories/services/service_repository';
 import { AxiosError } from 'axios';
 import { useQuery } from 'react-query';
@@ -22,7 +26,7 @@ export const createCategory = async (
   return response;
 };
 
-export const getCategories = async (): Promise<Category[]> => {
+export const getCategories = async (): Promise<CategoryResponse> => {
   const response = await service_repository
     .getCategories()
     .then(async (value) => {
