@@ -24,6 +24,7 @@ import {
   WrenchScrewdriverIcon,
   PhotoIcon,
   XMarkIcon,
+  NewspaperIcon,
 } from '@heroicons/react/24/outline';
 import {
   ChevronDownIcon,
@@ -57,8 +58,14 @@ const navigation = [
   },
   {
     name: 'Banner',
-    href: '/admin/banner',
+    href: Routes.banners,
     icon: TicketIcon,
+    current: false,
+  },
+  {
+    name: 'Article',
+    href: Routes.articles,
+    icon: NewspaperIcon,
     current: false,
   },
   {

@@ -14,7 +14,7 @@ const CategoryService = () => {
     <div>
       <BasicButton
         onPress={() => {
-          router.push(`${Routes.categories}add`);
+          router.push(`${Routes.categories}/add`);
         }}
         label="Add"
       />
@@ -22,7 +22,7 @@ const CategoryService = () => {
         {data?.map((category) => (
           <div
             onClick={() => {
-              router.push(`${Routes.categories}${category.id}`);
+              router.push(`${Routes.categories}/${category.id}`);
             }}
             key={category.id}
             style={{ backgroundColor: `#${category.color}` }}
