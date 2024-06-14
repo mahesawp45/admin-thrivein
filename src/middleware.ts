@@ -9,10 +9,12 @@ export function middleware(request: NextRequest, response: NextResponse) {
     res: response,
   });
 
+  console.log('====================================');
+  console.log('LOGGED ---> ', isLoggedin);
+  console.log('====================================');
+
   if (request.nextUrl.pathname === '/' && isLoggedin) {
     return NextResponse.redirect(new URL('/admin', request.url));
-  } else {
-    return NextResponse.redirect(new URL('/login', request.url));
   }
 }
 

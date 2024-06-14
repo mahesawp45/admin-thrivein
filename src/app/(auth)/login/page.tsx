@@ -22,7 +22,7 @@ const Login = () => {
       console.log('====================================');
       console.log('SUCESS');
       console.log('====================================');
-      router.push('admin');
+      router.replace('/');
     },
     onError: (error: any) => {
       console.log('====================================');
