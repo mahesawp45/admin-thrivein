@@ -13,7 +13,7 @@ const AddCategoryService = () => {
   const [formData, setFormData] = useState<CategoryRequest>({
     category: '',
     color: '',
-    discription: '',
+    description: '',
     icon_url: '',
     id: 0,
     title: '',
@@ -70,11 +70,11 @@ const AddCategoryService = () => {
           }}
         />
         <InputText
-          value={formData.discription}
+          value={formData.description}
           label="Description"
           classStyle="mb-4"
           onChange={(e) => {
-            setFormData({ ...formData, discription: e.target.value });
+            setFormData({ ...formData, description: e.target.value });
           }}
         />
         <InputText

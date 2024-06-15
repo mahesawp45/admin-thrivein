@@ -46,13 +46,13 @@ const navigation = [
   },
   {
     name: 'Service',
-    href: '/admin/service',
+    href: Routes.services,
     icon: WrenchScrewdriverIcon,
     current: false,
   },
   {
     name: 'Portfolio',
-    href: '/admin/portfolio-service',
+    href: Routes.portfolio,
     icon: PhotoIcon,
     current: false,
   },
@@ -70,13 +70,13 @@ const navigation = [
   },
   {
     name: 'User',
-    href: '/admin/user',
+    href: Routes.user,
     icon: UsersIcon,
     current: false,
   },
   {
     name: 'Chat User',
-    href: '/admin/chat-user',
+    href: Routes.chatUser,
     icon: ChatBubbleLeftIcon,
     current: false,
   },
