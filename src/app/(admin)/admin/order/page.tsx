@@ -1,7 +1,6 @@
 'use client';
 import BasicButton from '@/components/button/BasicButton';
 import { useHistoryOrder } from '@/controllers/history_order_controller';
-import { useCategories } from '@/controllers/service_controller';
 import Routes from '@/lib/routes';
 import { useRouter } from 'next/navigation';
 import React from 'react';
