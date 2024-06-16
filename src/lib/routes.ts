@@ -5,6 +5,7 @@ class Routes {
   static readonly services = '/admin/service';
   static readonly portfolio = '/admin/portfolio-service';
   static readonly user = '/admin/user';
+  static readonly order = '/admin/order';
   static readonly chatUser = '/admin/chat-user';
 }
 

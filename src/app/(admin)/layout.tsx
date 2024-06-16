@@ -25,6 +25,7 @@ import {
   PhotoIcon,
   XMarkIcon,
   NewspaperIcon,
+  ReceiptPercentIcon,
 } from '@heroicons/react/24/outline';
 import {
   ChevronDownIcon,
@@ -66,6 +67,12 @@ const navigation = [
     name: 'Article',
     href: Routes.articles,
     icon: NewspaperIcon,
+    current: false,
+  },
+  {
+    name: 'Order',
+    href: Routes.order,
+    icon: ReceiptPercentIcon,
     current: false,
   },
   {
